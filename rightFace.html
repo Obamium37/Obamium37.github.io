@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Right Face Data Collector</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Right Face Data Collecter</h1>
+  <div class="container">
+    <video id="preview" autoplay muted></video>
+    <br>
+    <div class="button-container">
+      <button id="startButton" disabled>Start</button>
+      <button id="stopButton" disabled>Stop</button>
+      <button id="redoButton" disabled>Redo</button>
+    </div>
+    <br>
+    <div id="recordedVideoContainer"></div>
+    <br>
+    <button id="nextButton" disabled>Next</button>
+  </div>
+
+  <div class="example-video-container">
+    <h2>Instructions for facial data collection</h2>
+    <p>1. Please record the right side of your face for 30 seconds</p>
+    <p>2. Please try to minimize movement, and remove all objects that may obstruct your face(Headphones, faces masks, etc)</p>
+    <p>3. Once you feel the video is good, click the submit button</p>
+  </div>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.940.0.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="rightFace.js"></script>
+</body>
+</html>

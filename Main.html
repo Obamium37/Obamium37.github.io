@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Main Page</title>
+</head>
+<body>
+  <h1>Welcome to the Main Page</h1>
+  <button onclick="redirectToIndex()">Begin Data Collection process</button>
+  <button onclick="logout()">Logout</button>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script>
+    // Initialize Firebase
+    var firebaseConfig = {
+        apiKey: "AIzaSyCBORVmHvAj0azoa6b8FkeOJQr6xKvjk1I",
+        authDomain: "polygence-ed9be.firebaseapp.com",
+        projectId: "polygence-ed9be",
+        storageBucket: "polygence-ed9be.appspot.com",
+        messagingSenderId: "665978109965",
+        appId: "1:665978109965:web:af654f14cec1f027565544",
+        measurementId: "G-LP7N7Z86KZ"
+     
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.auth().onAuthStateChanged(function(user) {
+    if (!user) {
+      // User is not authenticated, redirect to login.html
+      window.location.href = 'login.html';
+    }
+    });
+
+    function redirectToIndex() {
+      window.location.href = 'frontalFace.html';
+    }
+
+    function logout() {
+      firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        window.location.href = 'login.html'; // Redirect to login page after logout
+      }).catch(function(error) {
+        // An error happened.
+        console.log('Logout error:', error);
+      });
+    }
+  </script>
+</body>
+</html>
