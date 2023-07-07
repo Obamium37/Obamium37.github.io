@@ -11,7 +11,7 @@ var firebaseConfig = {
   firebase.auth().onAuthStateChanged(function(user) {
     if (!user) {
       // User is not authenticated, redirect to login.html
-      window.location.href = 'login.html';
+      window.location.href = 'index.html';
     } else{
       enableVideoRecording();
     }
